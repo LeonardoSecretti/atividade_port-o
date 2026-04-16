@@ -1,0 +1,4 @@
+O sistema deve simular um portão automático com duas partes controladas por servos, permitindo abrir o lado esquerdo, o direito, ambos ou fechar
+tudo por meio de quatro botões, enquanto seis LEDs indicam os estados: vermelho para fechado, verde para aberto em cada lado, amarelo quando há movimento
+ou estado intermediário (apenas um lado aberto) e azul quando o portão está totalmente aberto; o sistema inicia com ambos fechados, monitora continuamente os
+botões e atualiza os motores e LEDs conforme as ações realizadas.

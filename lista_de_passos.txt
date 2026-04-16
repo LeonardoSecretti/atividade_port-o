@@ -1,0 +1,36 @@
+Lista de passos – Portão automático
+Iniciar o sistema
+Definir:
+lado esquerdo = fechado
+lado direito = fechado
+Ler os botões continuamente
+ Se botão 1 for pressionado:
+Ligar LED amarelo (movimento)
+Abrir lado esquerdo
+Atualizar estado: esquerdo = aberto
+Desligar LED amarelo
+ Se botão 2 for pressionado:
+Ligar LED amarelo
+Abrir lado direito
+Atualizar estado: direito = aberto
+Desligar LED amarelo
+ Se botão 3 for pressionado:
+Ligar LED amarelo
+Abrir lado esquerdo
+Abrir lado direito
+Atualizar estados: ambos = abertos
+Desligar LED amarelo
+ Se botão 4 for pressionado:
+Ligar LED amarelo
+Fechar lado esquerdo
+Fechar lado direito
+Atualizar estados: ambos = fechados
+Desligar LED amarelo
+ Atualização dos LEDs (sempre após ações)
+Se esquerdo fechado → ligar vermelho esquerdo
+Se esquerdo aberto → ligar verde esquerdo
+Se direito fechado → ligar vermelho direito
+Se direito aberto → ligar verde direito
+Se os dois abertos → ligar LED azul
+Se apenas um aberto → ligar LED amarelo (estado intermediário)
+Se ambos fechados → apenas LEDs vermelhos acesos

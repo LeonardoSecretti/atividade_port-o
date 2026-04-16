@@ -1,0 +1,84 @@
+INÍCIO
+
+// Estados dos lados
+posEsq ← 0        // 0 = fechado, 1 = aberto
+posDir ← 0
+
+ENQUANTO (verdadeiro) FAÇA
+
+    ler botão1
+    ler botão2
+    ler botão3
+    ler botão4
+
+    // BOTÃO 1 → abre esquerdo
+    SE (botão1 pressionado) ENTÃO
+        ligar LED amarelo
+        mover servo esquerdo até abrir
+        posEsq ← 1
+        desligar LED amarelo
+    FIMSE
+
+    // BOTÃO 2 → abre direito
+    SE (botão2 pressionado) ENTÃO
+        ligar LED amarelo
+        mover servo direito até abrir
+        posDir ← 1
+        desligar LED amarelo
+    FIMSE
+
+    // BOTÃO 3 → abre os dois
+    SE (botão3 pressionado) ENTÃO
+        ligar LED amarelo
+        mover servo esquerdo até abrir
+        mover servo direito até abrir
+        posEsq ← 1
+        posDir ← 1
+        desligar LED amarelo
+    FIMSE
+
+    // BOTÃO 4 → fecha tudo
+    SE (botão4 pressionado) ENTÃO
+        ligar LED amarelo
+        mover servo esquerdo até fechar
+        mover servo direito até fechar
+        posEsq ← 0
+        posDir ← 0
+        desligar LED amarelo
+    FIMSE
+
+    // ===== CONTROLE DOS LEDs =====
+
+    // Lado esquerdo
+    SE (posEsq = 0) ENTÃO
+        ligar LED vermelho esquerdo
+        desligar LED verde esquerdo
+    SENÃO
+        desligar LED vermelho esquerdo
+        ligar LED verde esquerdo
+    FIMSE
+
+    // Lado direito
+    SE (posDir = 0) ENTÃO
+        ligar LED vermelho direito
+        desligar LED verde direito
+    SENÃO
+        desligar LED vermelho direito
+        ligar LED verde direito
+    FIMSE
+
+    // Estado totalmente aberto
+    SE (posEsq = 1 E posDir = 1) ENTÃO
+        ligar LED azul
+    SENÃO
+        desligar LED azul
+    FIMSE
+
+    // Estado intermediário
+    SE (posEsq ≠ posDir) ENTÃO
+        ligar LED amarelo
+    FIMSE
+
+FIMENQUANTO
+
+FIM
